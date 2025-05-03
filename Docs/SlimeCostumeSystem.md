@@ -95,9 +95,10 @@ else
 
 ## 🧠 기술 개선 방향
 
-- 개발 후반 Sprite Resolver의 존재를 확인함
-- `SpriteResolver`를 활용하면 **슬라임 프리셋에 따라 자동 위치 조정** 가능
+- 기본적을 첫 설계부터 코스튬을 추가하는 것을 고려하지 않는 구조로 작업을 진행한게 문제점으로 작용
+- Sprite Resolver라는 기능을 알게되었지만 현재 구조상 적용에 어려움이 있었음
 - 추후 프로젝트에서는 Sprite Resolver 기반의 구조로 개선하여, **유지보수성 및 유연성 확보**
+- 랜스 키우기 코스튬 시스템 - ( )
 
 ---
 
@@ -114,4 +115,3 @@ else
 - `CharacterAnim.cs`  
 - `CostumeData.cs`
 - `CostumePosData.cs`
-- (향후) SpriteResolver 기반 시스템
