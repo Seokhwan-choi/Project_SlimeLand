@@ -28,7 +28,7 @@
 
 - 상호작용을 할수록 애정도가 상승
 - 일정 수치 도달 시 회득 재화 추가 보너스
-- 애정도는 저장되며, 슬라임 개체별로 독립적으로 관리됨
+- 호감도는 저장되며, 슬라임 개체별로 독립적으로 관리됨
 
 ---
 
@@ -36,13 +36,14 @@
 
 - 유저와 슬라임 간 **감정적 유대감 형성**
 - 단순 방치형 게임이 아닌 **상호작용 중심의 힐링 경험 제공**
-- 선물 및 애정도 시스템으로 **꾸준한 플레이 동기 부여**
+- 선물 및 호감도 시스템으로 **꾸준한 플레이 동기 부여**
 
 ---
 
 ## 📁 관련 클래스
 
-- `SlimeInteractionManager.cs`  
-- `SlimeAffectionSystem.cs`  
-- `TouchInputHandler.cs`  
-- `GiftData.cs`
+- `SavedSlimeManager.cs`  
+- `Slime.cs`  
+- `Inventory.cs`  
+- `Popup_GiftUI.cs`
+- `GiftItemUI.cs`
