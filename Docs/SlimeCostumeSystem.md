@@ -24,9 +24,72 @@
 - 다양한 형태의 슬라임에 대응 가능하지만, **유지보수의 어려움** 존재
 
 ```csharp
-costumeTransform.localPosition = slimePreset.headPosition;
-costumeTransform.localRotation = slimePreset.headRotation;
+string costume = slimeInfo.Costumes[(int)mType];
+if (costume.IsValid())
+{
+    gameObject.SetActive(true);
+    CostumeData costumeData = MLand.GameData.CostumeData.TryGet(costume);
+    if (costumeData != null)
+    {
+        // 코스튬 장착
+        var renderer_idle_00 = gameObject.FindComponent<SpriteRenderer>($"{mType}_Idle_00");
+        var renderer_idle_01 = gameObject.FindComponent<SpriteRenderer>($"{mType}_Idle_01");
+
+        renderer_idle_00.sprite = MLand.Atlas.GetCostumeSprite(costumeData.spriteImg);
+        renderer_idle_01.sprite = MLand.Atlas.GetCostumeSprite(costumeData.spriteImg2);
+
+        var costumePosData = DataUtil.GetCostumePosData(mSlimeId, costume);
+        if (costumePosData != null)
+        {
+            string posStr00 = string.Empty;
+            string posStr01 = string.Empty;
+            // Move, Idle, Excited, Happy, Shock, Sleepy 중 하나 사용
+            if (animType == AnimType.Excited)
+            {
+                posStr00 = costumePosData.pos[(int)CostumePos.Excited];
+            }
+            else if (animType == AnimType.Happy)
+            {
+                posStr00 = costumePosData.pos[(int)CostumePos.Happy];
+            }
+            else if (animType == AnimType.Shock)
+            {
+                posStr00 = costumePosData.pos[(int)CostumePos.Shock];
+            }
+            else if (animType == AnimType.Sleepy)
+            {
+                posStr00 = costumePosData.pos[(int)CostumePos.Sleepy];
+            }
+            else // Move, Idle
+            {
+                // idle 00 과 idle 01 사용
+                posStr00 = costumePosData.pos[(int)CostumePos.Idle00];
+                posStr01 = costumePosData.pos[(int)CostumePos.Idle01];
+            }
+
+            Pos pos00 = Pos.Parse(posStr00);
+            Pos pos01 = Pos.Parse(posStr01);
+
+            // 코스튬 위치 조정
+            renderer_idle_00.transform.localPosition = new Vector3(pos00.X, pos00.Y);
+            renderer_idle_01.transform.localPosition = new Vector3(pos01.X, pos01.Y);
+
+            // 코스튬 댑스 조정
+            renderer_idle_00.sortingOrder = costumePosData.orderInLayer;
+            renderer_idle_01.sortingOrder = costumePosData.orderInLayer;
+        }
+    }
+}
+else
+{
+    gameObject.SetActive(false);
+}
 ```
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/60ed4b74-f8f8-45da-8ca6-e3cab539d849" width="280" style="margin-right: 16px;" />
+  <img src="https://github.com/user-attachments/assets/3074f5a7-7428-4ebe-b0aa-7f17c750e34d" width="280"/>
+</p>
 
 ---
 
@@ -48,7 +111,7 @@ costumeTransform.localRotation = slimePreset.headRotation;
 
 ## 📁 관련 클래스
 
-- `SlimeCostumeManager.cs`  
-- `SlimePreset.cs`  
-- `CostumeData.cs`  
+- `CharacterAnim.cs`  
+- `CostumeData.cs`
+- `CostumePosData.cs`
 - (향후) SpriteResolver 기반 시스템
