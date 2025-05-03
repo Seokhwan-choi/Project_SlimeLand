@@ -17,6 +17,11 @@
 - 선물 유형에 따라 반응 애니메이션이 달라짐
 - 선물 시 **호감도**가 상승하고, 특정 수치 도달 시 획득 재화 증가
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e4783f83-f9e0-41e9-be4b-f4569ddd949a" width="280" style="margin-right: 16px;" />
+  <img src="https://github.com/user-attachments/assets/734b30ce-e9d6-4d30-9c27-69772ec5ff27" width="280/>
+</p>
+
 ---
 
 ## ❤️ 호감도 시스템
