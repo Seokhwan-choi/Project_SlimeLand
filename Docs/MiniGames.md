@@ -40,6 +40,12 @@ Minimax는 가능한 모든 수를 시뮬레이션하여
 - 속성별 정답 검증 로직
 - 난이도/속도 증가 기능 포함
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bc064836-1239-41be-83d3-00090cd046ff" width="280" style="margin-right: 16px;" />
+<img src="https://github.com/user-attachments/assets/0adbe006-54be-442a-95b2-ac6094e0886d" width="280" style="margin-right: 16px;" />
+  <img src="https://github.com/user-attachments/assets/09e5c4cb-5c04-46bf-8cc0-ed9b50a4ad5c" width="280"/>
+</p>
+
 ---
 
 ## 💡 설계 의도
@@ -52,9 +58,11 @@ Minimax는 가능한 모든 수를 시뮬레이션하여
 
 ## 📁 관련 클래스
 
-- `MiniGameManager.cs`  
-- `TicTacToeGame.cs`  
-- `TicTacToeAI.cs` (Minimax 알고리즘 포함)
-- `TeamSortingGame.cs`  
-- `SlimeAttribute.cs`  
-- `GameResultPopup.cs`
+- `Popup_MiniGameHomeUI.cs`  
+- `Popup_MiniGame_TicTacToeUI.cs`  
+- `TicTacToe_MiniMaxAI.cs` (Minimax 알고리즘 포함)
+- `Popup_MiniGame_ElementalCoursesUI.cs`  
+- `ElementalCourses_ScoreManager.cs`  
+- `ElementalCourses_FeverManager.cs`
+- `ElementalCourses_TimeMananger.cs`
+- `ElementalCourses_TeamManager.cs`
