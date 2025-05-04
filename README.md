@@ -1,4 +1,4 @@
-# 모바일 방치형 힐링 - 슬라임 랜드
+# 모바일 방치형 힐링 게임 - 슬라임 랜드
 
 ![Image](https://github.com/user-attachments/assets/c0052cf7-29e9-4db3-8e13-80b47f82c4a8)
 
