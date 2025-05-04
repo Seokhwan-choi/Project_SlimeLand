@@ -33,7 +33,7 @@ Unity로 개발한 힐링형 상호작용 캐주얼 게임입니다.
 | 분류 | 기술 |
 |------|------|
 | **게임 엔진** | Unity 2023.2.20f1 |
-| **AI 구현** | FSM (Finite State Machine) |
+| **AI 구현** | FSM, MiniMax |
 | **UI 연출** | DoTween |
 | **데이터 관리** | PlayerPrefs 기반 로컬 저장 방식 |
 | **광고 수익화** | Unity Level Play ( Mediation ) |
